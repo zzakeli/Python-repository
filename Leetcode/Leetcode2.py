@@ -15,6 +15,7 @@ def interpret(self, command):
             result += "al"
             i += 3
     
+    
     return result
 
 command  = "G()()()()(al)"
