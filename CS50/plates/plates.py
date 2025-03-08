@@ -12,11 +12,24 @@ def is_valid(s):
         return False
     
     for i in range(len(s)):
+        if str(s[i]).isnumeric() and i > 0 and i < len(s) - 1:
+            return False
+    
+    for i in range(len(s)):
         if str(s[i]).isnumeric():
             hasNumeric = True
             firstNumeric = s[i]
             break
     
+    numericCount = 0
+    for i in range(len(s)):
+        if str(s[i]).isalpha():
+            break
+        numericCount += 1
+    
+    if numericCount == len(s):
+        return False
+        
     if int(firstNumeric) == 0:
         return False
         
